@@ -26,6 +26,17 @@ morse_dict = {
     'X': '−··−',
     'Y': '−·−−',
     'Z': '−−··',
+    ' ': ' ',
+    '0': '−−−−−',
+    '1': '·−−−−',
+    '2': '··−−−',
+    '3': '···−−',
+    '4': '····−',
+    '5': '·····',
+    '6': '−····',
+    '7': '−−···',
+    '8': '−−−··',
+    '9': '−−−−·',
 }
 
 
@@ -36,7 +47,10 @@ def split(word):
 def converter():
     word = input('please input your word to be converted: ').upper()
     for w in word:
-        print(f"{w}: {morse_dict[w]}")
+        if morse_dict[w] == ' ':
+            print('\n')
+        else:
+            print(f"{w}: {morse_dict[w]}")
 
 
 converter()
